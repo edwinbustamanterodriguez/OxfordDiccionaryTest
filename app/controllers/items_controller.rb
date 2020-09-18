@@ -51,7 +51,7 @@ class ItemsController < ApplicationController
       render :new
     else
       body_error_message = JSON.parse(@search.body,)
-      @message_error =  body_error_message["error"]
+      @message_error =   "#{body_error_message["message"]} - #{body_error_message["error"] }"
       @code_error ="'ERROR:' #{@search.status} "
       render :new
     end
